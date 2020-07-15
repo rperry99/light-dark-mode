@@ -55,6 +55,7 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: normal;
+  color: var(--on-background-alt);
 }
 
 /* Navigation */
@@ -122,6 +123,7 @@ button {
   border: 2px solid var(--primary-color);
   font-size: 15px;
   outline: none;
+  text-transform: capitalize;
 }
 
 button:disabled {
@@ -174,14 +176,23 @@ p {
 }
 
 /* Contact Section */
-.fab {
-  font-size: 100px;
-  margin-right: 50px;
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55vw;
+}
+
+.fa {
   cursor: pointer;
   color: var(--primary-color);
 }
 
-.fab:hover {
+.fa:before {
+  font-size: 100px;
+}
+
+.fa:hover {
   color: var(--on-background);
 }
 
@@ -256,7 +267,7 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
-.fas {
+.fa {
   font-size: 30px;
   margin-right: 5px;
 }
