@@ -216,6 +216,7 @@ p {
   top: -4px;
   right: 5px;
   color: var(--on-background);
+  text-transform: capitalize;
 }
 
 .theme-switch {
@@ -267,7 +268,7 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
-.fa {
+#toggle-icon i:before {
   font-size: 30px;
   margin-right: 5px;
 }
