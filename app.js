@@ -20,12 +20,24 @@ function modeSwap(theme, navStyle, textStyle, icon1, icon2) {
 function switchTheme(event) {
   if (event.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
     modeSwap('dark', 0, 255, 'sun', 'moon');
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
     modeSwap('light', 255, 0, 'moon', 'sun');
   }
 }
 
 // Event listener
 toggleSwitch.addEventListener('change', switchTheme);
+
+// Check local storage for theme
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+    modeSwap('dark', 0, 255, 'sun', 'moon');
+  }
+}
