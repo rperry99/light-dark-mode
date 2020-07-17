@@ -1,11 +1,17 @@
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
-const nav = document.getElementById('nav');
-const toggleIcon = document.getElementById('toggle-icon');
-const image1 = document.getElementById('image1');
-const image2 = document.getElementById('image2');
-const image3 = document.getElementById('image3');
-const textBox = document.getElementById('text-box');
+const nav = getElements('nav');
+const toggleIcon = getElements('toggle-icon');
+const image1 = getElements('image1');
+const image2 = getElements('image2');
+const image3 = getElements('image3');
+const textBox = getElements('text-box');
 
+// Function to not have to type document.getElementById so much
+function getElements(id) {
+  return document.getElementById(id);
+}
+
+// Function to dynamically change theme
 function modeSwap(theme, navStyle, textStyle, icon1, icon2) {
   nav.style.backgroundColor = `rgb(${navStyle} ${navStyle} ${navStyle} / 50%)`;
   textBox.style.backgroundColor = `rgb(${textStyle} ${textStyle} ${textStyle} / 50%)`;
